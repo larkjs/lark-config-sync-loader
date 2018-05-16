@@ -10,3 +10,4 @@ const config      = new LarkConfig();
 
 load(config, '/path/to/config');    // equivalent to config.load('/path/to/config') in sync way
 ```
+
