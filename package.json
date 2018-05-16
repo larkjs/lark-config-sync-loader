@@ -1,0 +1,40 @@
+{
+  "name": "lark-config-sync-loader",
+  "version": "1.0.0",
+  "description": "Sync loader for lark-config",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint index.js",
+    "test:clear-env": "npm unlink lark-config-sync-loader && npm unlink && npm install",
+    "test:prepare-env": "npm link && npm link lark-config-sync-loader",
+    "pretest": "npm run test:clear-env && npm run lint && npm run test:prepare-env",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require should --recursive test",
+    "posttest": "npm run test:clear-env"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larkjs/lark-config-sync-loader.git"
+  },
+  "keywords": [
+    "config",
+    "loader",
+    "sync"
+  ],
+  "author": "Sun Haohao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larkjs/lark-config-sync-loader/issues"
+  },
+  "homepage": "https://github.com/larkjs/lark-config-sync-loader#readme",
+  "dependencies": {
+    "js-yaml": "^3.11.0",
+    "lark-config": "^3.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-spellcheck": "0.0.10",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^5.1.1",
+    "should": "^13.2.1"
+  }
+}
