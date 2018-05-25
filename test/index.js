@@ -11,6 +11,7 @@ describe('common use', () => {
         load(config, path.resolve(__dirname, 'config'));
         config.get('a.key').should.be.exactly('value');
         config.get('b.c.C').should.be.exactly('D');
+        should(config.get('\\.c.C')).be.exactly(undefined);
     });
 
 });
